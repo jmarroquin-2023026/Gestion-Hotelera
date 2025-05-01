@@ -9,14 +9,14 @@ const eventsSchema = Schema({
         type: Date,
         required:true
     },
-    user:[{
+    user:{
         type: Schema.Types.ObjectId,
         ref: 'user'
-    }],
-    room:[{
+    },
+    room:{
         type: Schema.Types.ObjectId,
         ref: 'rooms'
-    }],
+    },
     extraServices:{
         type: Schema.Types.ObjectId,
         ref: 'extraServices'
