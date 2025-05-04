@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c69ded86-e925-471c-87fb-b0701c0479ac",
+		"_postman_id": "5dea925c-46a8-4999-8b07-afaaf3cfb5e7",
 		"name": "Gestion-Hotelera",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37956979",
-		"_collection_link": "https://a22222-7420.postman.co/workspace/Hola~e845f1c2-81ad-4194-bea5-501ebf52cb9e/collection/37956979-c69ded86-e925-471c-87fb-b0701c0479ac?action=share&source=collection_link&creator=37956979"
+		"_exporter_id": "37956957"
 	},
 	"item": [
 		{
@@ -16,48 +15,53 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
+							"mode": "formdata",
+							"formdata": [
 								{
 									"key": "name",
-									"value": "Jared",
+									"value": "Denis Alfredo",
 									"type": "text"
 								},
 								{
 									"key": "surname",
-									"value": "Morataya",
+									"value": "Vela Velasquez",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "jmorataya@gmail.com",
+									"value": "dvela2023095@kinal.com",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "jmorataya",
+									"value": "dvela",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "Jmorataya-123",
+									"value": "DvelA1234@",
 									"type": "text"
 								},
 								{
 									"key": "role",
-									"value": "CLIENT",
+									"value": "hola",
 									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/DELL/OneDrive/Imágenes/logoDV.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:2636/user/register",
+							"raw": "localhost:2636/v1/register",
 							"host": [
 								"localhost"
 							],
 							"port": "2636",
 							"path": [
-								"user",
+								"v1",
 								"register"
 							]
 						}
@@ -66,6 +70,30 @@
 				},
 				{
 					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable('token',data.token)\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -74,24 +102,24 @@
 							"urlencoded": [
 								{
 									"key": "userLogin",
-									"value": "jmorataya",
+									"value": "dvela",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "Jmorataya-123",
+									"value": "DvelA1234@",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:2636/user/login",
+							"raw": "localhost:2636/v1/login",
 							"host": [
 								"localhost"
 							],
 							"port": "2636",
 							"path": [
-								"user",
+								"v1",
 								"login"
 							]
 						}
@@ -104,8 +132,8 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -129,20 +157,21 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:2636/user/681455ce7096b605d44b83c1",
+							"raw": "localhost:2636/user/get/681672a451fc56e0c4730b1b",
 							"host": [
 								"localhost"
 							],
 							"port": "2636",
 							"path": [
 								"user",
-								"681455ce7096b605d44b83c1"
+								"get",
+								"681672a451fc56e0c4730b1b"
 							]
 						}
 					},
@@ -154,8 +183,8 @@
 						"method": "PUT",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -171,18 +200,25 @@
 									"key": "surname",
 									"value": "Morataya",
 									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Holaaaaaaaaa",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:2636/user/681455ce7096b605d44b83c1",
+							"raw": "localhost:2636/user/update/681672a451fc56e0c4730b1b",
 							"host": [
 								"localhost"
 							],
 							"port": "2636",
 							"path": [
 								"user",
-								"681455ce7096b605d44b83c1"
+								"update",
+								"681672a451fc56e0c4730b1b"
 							]
 						}
 					},
@@ -194,8 +230,8 @@
 						"method": "PUT",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -204,18 +240,18 @@
 							"urlencoded": [
 								{
 									"key": "oldPassword",
-									"value": "Jmorataya-123",
+									"value": "DvelA1234@",
 									"type": "text"
 								},
 								{
 									"key": "newPassword",
-									"value": "Jmorataya-456",
+									"value": "HolA1234@",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:2636/user/pass/681455ce7096b605d44b83c1",
+							"raw": "localhost:2636/user/pass/6817d45a8f2afd17e83c85ac",
 							"host": [
 								"localhost"
 							],
@@ -223,7 +259,7 @@
 							"path": [
 								"user",
 								"pass",
-								"681455ce7096b605d44b83c1"
+								"6817d45a8f2afd17e83c85ac"
 							]
 						}
 					},
@@ -235,20 +271,57 @@
 						"method": "DELETE",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:2636/user/68145d254f5d4535b7b50798",
+							"raw": "localhost:2636/user/delete/68145d254f5d4535b7b50798",
 							"host": [
 								"localhost"
 							],
 							"port": "2636",
 							"path": [
 								"user",
+								"delete",
 								"68145d254f5d4535b7b50798"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Imagen",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/DELL/OneDrive/Imágenes/logoDV.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/user/update-profile-picture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"update-profile-picture"
 							]
 						}
 					},
@@ -569,8 +642,8 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -590,6 +663,11 @@
 								{
 									"key": "state",
 									"value": "AVAILABLE",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "100",
 									"type": "text"
 								}
 							]
@@ -889,8 +967,8 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -931,6 +1009,11 @@
 									"key": "reservations",
 									"value": "150",
 									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "681688d520575edcb0918a0a",
+									"type": "text"
 								}
 							]
 						},
@@ -954,8 +1037,8 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -1057,6 +1140,96 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Estadisticas de Hotel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "hotel",
+									"value": "6816898f20575edcb0918a11",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2025",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/hotel/hotel-stats",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"hotel",
+								"hotel-stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estadisticas del Hotel para Admin del Hotel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/report/hotel-reservs",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"report",
+								"hotel-reservs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver Huespedes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/report/hotel-guests",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"report",
+								"hotel-guests"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1069,8 +1242,8 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -1079,17 +1252,27 @@
 							"urlencoded": [
 								{
 									"key": "user",
-									"value": "68147ebb174231eee0f9ff3a",
+									"value": "681688d520575edcb0918a0a",
 									"type": "text"
 								},
 								{
 									"key": "hotel",
-									"value": "68147ee2174231eee0f9ff3d",
+									"value": "6816a9b36c5da75c59e763ae",
 									"type": "text"
 								},
 								{
 									"key": "room",
-									"value": "68147ce437b74c13f7b3451c",
+									"value": "681695ef853235abbcd55b3c",
+									"type": "text"
+								},
+								{
+									"key": "entranceDate",
+									"value": "2025-05-03",
+									"type": "text"
+								},
+								{
+									"key": "exitDate",
+									"value": "2025-05-05",
 									"type": "text"
 								}
 							]
@@ -1182,6 +1365,46 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Calcular disponibilidad",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "consultDate",
+									"value": "2025-05-04",
+									"type": "text"
+								},
+								{
+									"key": "room",
+									"value": "681695ef853235abbcd55b3c",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/report/calculate-disponibility",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"report",
+								"calculate-disponibility"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1194,8 +1417,8 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"key": "authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -1219,7 +1442,7 @@
 								},
 								{
 									"key": "room",
-									"value": "68147ce437b74c13f7b3451c",
+									"value": "681695ef853235abbcd55b3c",
 									"type": "text"
 								},
 								{
@@ -1348,6 +1571,46 @@
 							"path": [
 								"event",
 								"681482082bfd9aa2ab088071"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calcular disponibilidad",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "consultDate",
+									"value": "2025/05/02",
+									"type": "text"
+								},
+								{
+									"key": "room",
+									"value": "681695ef853235abbcd55b3c",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/event/calculate-disponibility",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"event",
+								"calculate-disponibility"
 							]
 						}
 					},

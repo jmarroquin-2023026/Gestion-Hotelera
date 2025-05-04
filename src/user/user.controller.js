@@ -66,7 +66,12 @@ export const updateUser = async(req,res)=>{
     try{
         let {id} = req.params
         let data = req.body
-        let updatedUser = await User.findByIdAndUpdate(id,data,{new:true})
+        let updatedUser = await User.findByIdAndUpdate(id,{
+            name:data.name,
+            surname:data.surname,
+            email:data.email,
+            username:data.username,
+        },{new:true})
         if(!updatedUser){
             return res.status(404).send(
                 {

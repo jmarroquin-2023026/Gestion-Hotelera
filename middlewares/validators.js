@@ -37,13 +37,11 @@ export const updateUserValidator = [
         .notEmpty()
         .isEmail()
         .custom((email, {req})=> existEmail(email, req.user)),
-    body('password')
-        .optional()
-        .custom(notRequiredField),
+    body('name')
+        .optional().notEmpty(),
+    body('surname')
+        .optional().notEmpty(),
     body('profilePicture')
-        .optional()
-        .custom(notRequiredField),
-    body('role')
         .optional()
         .custom(notRequiredField),
         validateErrorsWhitoutFiles
