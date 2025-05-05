@@ -33,8 +33,7 @@ const hotelSchema = Schema({
         required: true
     },
     photos:[{
-        type:String,
-        required:[true,'Hotel photos are required'],
+        type:String
     }]
 },
     {versionKey: false}
