@@ -2,24 +2,28 @@ import { Schema, model } from "mongoose"
 
 const eventsSchema = Schema({
     typeOfEvent: {
-        type: Schema.Types.ObjectId,
-        ref: 'typeOfEvent'
+        type:String,
+        enum:['CONFERENCE','WEDDING','MEETING']
     },
     date:{
         type: Date,
         required:true
     },
-    user:[{
+    user:{
         type: Schema.Types.ObjectId,
         ref: 'user'
-    }],
-    room:[{
+    },
+    room:{
         type: Schema.Types.ObjectId,
         ref: 'rooms'
-    }],
-    extraServices:{
+    },
+    extraServices:[{
         type: Schema.Types.ObjectId,
-        ref: 'extraServices'
+        required:[false,'Extra Services are required']
+    }],
+    totalPrice:{
+        type:Number,
+        required:[true,'Total price is required']
     }
 },
     {versionKey: false}

@@ -1,0 +1,1055 @@
+{
+	"info": {
+		"_postman_id": "4886fb40-673c-4e33-a436-847b23eff680",
+		"name": "Gestion-Hotelera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37956979",
+		"_collection_link": "https://a22222-7420.postman.co/workspace/new~561937b5-f6a3-430d-8f1f-26f3230b1436/collection/37956979-4886fb40-673c-4e33-a436-847b23eff680?action=share&source=collection_link&creator=37956979"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Jared",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Morataya",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jmorataya@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "jmorataya",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Jmorataya-123",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "CLIENT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userLogin",
+									"value": "jmorataya",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Jmorataya-123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/user/681455ce7096b605d44b83c1",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"681455ce7096b605d44b83c1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Sebastian",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Morataya",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/user/681455ce7096b605d44b83c1",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"681455ce7096b605d44b83c1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePassword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "Jmorataya-123",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "Jmorataya-456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/user/pass/681455ce7096b605d44b83c1",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"pass",
+								"681455ce7096b605d44b83c1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/user/68145d254f5d4535b7b50798",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"user",
+								"68145d254f5d4535b7b50798"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "AddRoom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "SUITE",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Habitacion espaciosa",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "AVAILABLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/room/add",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"room",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoom",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/room/",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"room",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/room/681471d71f432e9026da3e93",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"room",
+								"681471d71f432e9026da3e93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRoom",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Habitacion para 10 personas",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/room/681471d71f432e9026da3e93",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"room",
+								"681471d71f432e9026da3e93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRoom",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/room/681471d71f432e9026da3e93",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"room",
+								"681471d71f432e9026da3e93"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "AddReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "68145d254f5d4535b7b50798",
+									"type": "text"
+								},
+								{
+									"key": "review",
+									"value": "Gran servicio",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025/01/01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/review/add",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"review",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReview",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/review/",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"review",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/review/681475c832057440ce045b13",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"review",
+								"681475c832057440ce045b13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateReview",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "review",
+									"value": "Pésimo servicio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/review/681475c832057440ce045b13",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"review",
+								"681475c832057440ce045b13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteReview",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/review/681475c832057440ce045b13",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"review",
+								"681475c832057440ce045b13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "AddHotel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Hotel Plaza",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "768 5th Ave, New York, NY 10019, Estados Unidos",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "68147cba37b74c13f7b3451a",
+									"type": "text"
+								},
+								{
+									"key": "rooms",
+									"value": "68147ce437b74c13f7b3451c",
+									"type": "text"
+								},
+								{
+									"key": "amenities",
+									"value": "Habitaciones, comedor y piscina",
+									"type": "text"
+								},
+								{
+									"key": "reviews",
+									"value": "68147c6837b74c13f7b34517",
+									"type": "text"
+								},
+								{
+									"key": "reservations",
+									"value": "150",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/hotel/add",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"hotel",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetHotel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/hotel/",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"hotel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetHotelById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/hotel/68147d4f37b74c13f7b3451e",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"hotel",
+								"68147d4f37b74c13f7b3451e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateHotel",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "Estados Unidos",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/hotel/68147d4f37b74c13f7b3451e",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"hotel",
+								"68147d4f37b74c13f7b3451e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteHotel",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/hotel/68147d4f37b74c13f7b3451e",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"hotel",
+								"68147d4f37b74c13f7b3451e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "AddReport",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "68147ebb174231eee0f9ff3a",
+									"type": "text"
+								},
+								{
+									"key": "hotel",
+									"value": "68147ee2174231eee0f9ff3d",
+									"type": "text"
+								},
+								{
+									"key": "room",
+									"value": "68147ce437b74c13f7b3451c",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/report/add",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"report",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReport",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/report/",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"report",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReportById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/report/68147eeb174231eee0f9ff3f",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"report",
+								"68147eeb174231eee0f9ff3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteReport",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/report/68147eeb174231eee0f9ff3f",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"report",
+								"68147eeb174231eee0f9ff3f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "AddEvent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "typeOfEvent",
+									"value": "6814814a38bcff4b55619739",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025/05/02",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "68147ebb174231eee0f9ff3a",
+									"type": "text"
+								},
+								{
+									"key": "room",
+									"value": "68147ce437b74c13f7b3451c",
+									"type": "text"
+								},
+								{
+									"key": "extraServices",
+									"value": "Ninguno",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/event/add",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"event",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEvent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/event/",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"event",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEventById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/event/681482082bfd9aa2ab088071",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"event",
+								"681482082bfd9aa2ab088071"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateEvent",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "extraServices",
+									"value": "Piscina y servicio a la habitación",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/event/681482082bfd9aa2ab088071",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"event",
+								"681482082bfd9aa2ab088071"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEvent",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE0NTVjZTcwOTZiNjA1ZDQ0YjgzYzEiLCJ1c2VybmFtZSI6Imptb3JhdGF5YSIsIm5hbWUiOiJKYXJlZCIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3NDYxNjM5OTgsImV4cCI6MTc0NjE4MTk5OH0.rXGeTwK9_DarhyWb22yYBRj9OSsDagN5kWPll2vdKDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/event/681482082bfd9aa2ab088071",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"event",
+								"681482082bfd9aa2ab088071"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
