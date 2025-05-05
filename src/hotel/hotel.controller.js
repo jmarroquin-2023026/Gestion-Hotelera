@@ -10,6 +10,7 @@ export const addHotel =async(req,res)=>{
         }
         let data=req.body
         let subject = new Hotel(data)
+        subject.photo = req.file.filename ?? null
         await subject.save()
         return res.status(200).send(
             {

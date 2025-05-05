@@ -11,7 +11,7 @@ api.put('/update-profile-picture',[validateJwt,uploadProfilePicture.single('prof
 
 //Agregar el is Admin
 api.get('/', [validateJwt,isAdmin,limiter], getUsers)
-api.get('/get/:id', [validateJwt, isAdmin,limiter], getUserById)
+api.get('/:id', [validateJwt, isAdmin,limiter], getUserById)
 api.put('/pass/:id', [validateJwt], updatePassword)
 api.put('/update/:id', [validateJwt,updateUserValidator], updateUser)
 api.delete('/delete/:id',[validateJwt,isAdmin], deleteUser)

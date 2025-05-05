@@ -12,6 +12,7 @@ import reportRoutes from '../src/report/report.routes.js'
 import reviewRoutes from '../src/review/review.routes.js'
 import roomRoutes from '../src/room/room.routes.js'
 import authRoutes from '../src/auth/auth.routes.js'
+import extraServicesRoutes from '../src/extraServices/extraServices.routes.js'
 
 
 
@@ -29,6 +30,7 @@ const routes = (app)=>{
     app.use('/user',userRoutes)
     app.use('/event',eventsRoutes)
     app.use('/hotel',hotelRoutes)
+    app.use('/extras',extraServicesRoutes)
     app.use('/report',reportRoutes)
     app.use('/review',reviewRoutes)
     app.use('/room',roomRoutes)
