@@ -64,3 +64,12 @@ export const hotelValidator =[
     body('amenities','Amenities is required').notEmpty(),
     validateErrors
 ]
+
+export const updatedHotelValidator =[
+    body('owner','User is required').optional().notEmpty().custom(isHotelOwner),
+    body('name','Name is required').optional().notEmpty(),
+    body('address','Address is required').optional().notEmpty(),
+    body('category','Category is required').optional().notEmpty(),
+    body('amenities','Amenities is required').optional().notEmpty(),
+    validateErrorsWhitoutFiles
+]
