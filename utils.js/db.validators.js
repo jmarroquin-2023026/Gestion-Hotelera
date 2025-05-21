@@ -1,6 +1,7 @@
 import User from '../src/user/user.model.js'
 import Hotel from '../src/hotel/hotel.model.js'
 import Room from '../src/room/room.model.js'
+
 export const existUsername = async (username, user, id)=>{
     const alreadyUsername =  await User.findOne({username})
     if(alreadyUsername && !alreadyUsername._id != user._id){
@@ -39,6 +40,15 @@ export const existRoom = async (room)=>{
     }
 }
 
+export const isHotelOwner =async(id)=>{
+    try {
+        const user = await User.findById(id)
+        if(!user|| user.role !== 'HOTELOWNER') return res.status(403).send({success:false,message:`You dont have access ${user.username}`})
+    } catch (error) {
+        console.error(error);
+        throw Error('This user is not a hotel owner')
+    }
+}
 export const notRequiredField = (field)=>{
     if(field){
         throw Error(`${field} is not required`)

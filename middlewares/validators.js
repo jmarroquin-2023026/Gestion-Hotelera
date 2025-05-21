@@ -1,5 +1,5 @@
 import { body } from "express-validator";
-import { existEmail, existHotel, existRoom, existUser, existUsername, notRequiredField } from "../utils.js/db.validators.js";
+import { existEmail, existHotel, existRoom, existUser, existUsername, isHotelOwner, notRequiredField } from "../utils.js/db.validators.js";
 import { validateErrors, validateErrorsWhitoutFiles } from "./validate.error.js";
 
 export const registerValidator= [
@@ -54,4 +54,13 @@ export const reportValidator =[
     body('entranceDate','Entrance Date is required').notEmpty().isDate(),
     body('exitDate','Exit Date is required').notEmpty().isDate(),
     validateErrorsWhitoutFiles
+]
+
+export const hotelValidator =[
+    body('owner','User is required').notEmpty().custom(isHotelOwner),
+    body('name','Name is required').notEmpty(),
+    body('address','Address is required').notEmpty(),
+    body('category','Category is required').notEmpty(),
+    body('amenities','Amenities is required').notEmpty(),
+    validateErrors
 ]
