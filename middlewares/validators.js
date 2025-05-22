@@ -73,3 +73,21 @@ export const updatedHotelValidator =[
     body('amenities','Amenities is required').optional().notEmpty(),
     validateErrorsWhitoutFiles
 ]
+
+export const roomValidator =[
+    body('type','Type is required').notEmpty(),
+    body('description','Description is required').notEmpty().isLength({min:30,max:200}),
+    body('amount','Amount is required').notEmpty(),
+    body('hotel','Hotel is required').notEmpty().custom(existHotel),
+    body('price','Price is required').notEmpty(),
+    validateErrorsWhitoutFiles
+]
+
+export const updatedRoomValidator =[
+    body('type','Type is required').optional().notEmpty(),
+    body('description','Description is required').optional().notEmpty().isLength({min:30,max:200}),
+    body('amount','Amount is required').optional().notEmpty(),
+    body('hotel','Hotel is required').optional().notEmpty().custom(existHotel),
+    body('price','Price is required').optional().notEmpty(),
+    validateErrorsWhitoutFiles
+]

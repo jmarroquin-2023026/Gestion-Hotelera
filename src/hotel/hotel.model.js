@@ -16,7 +16,7 @@ const hotelSchema = Schema({
     },
     category:{
         type: String,
-        enum:[],//Piensen ahi que categorias le ponen
+        enum:['1 STAR','2 STARS','3 STARS','4 STARS','5 STARS'],//Piensen ahi que categorias le ponen
         required:[true,'A category is required'],
         default:''
     },

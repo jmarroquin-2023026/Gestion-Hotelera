@@ -19,9 +19,18 @@ const configs = (app)=>{
     app.use(express.json())
     app.use(express.urlencoded({extended:true}))
     app.use(cors())
-    app.use(helmet())
+    app.use(
+  helmet({
+    crossOriginResourcePolicy: { policy: 'cross-origin' },
+  })
+)
     app.use(morgan('dev'))
     app.use(limiter)
+    app.use(cors())
+ 
+// Luego aplicas CORS también a la ruta estática:
+app.use('/uploads', cors(), express.static('uploads'))
+ 
 }
 
 const routes = (app)=>{

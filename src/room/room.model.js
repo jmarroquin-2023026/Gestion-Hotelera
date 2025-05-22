@@ -8,7 +8,9 @@ const roomSchema = Schema({
     },
     description:{
         type: String,
-        required:true
+        required:true,
+        minlegth:[30,'The description needs at least 30 characters'],
+        maxlength:[200,`Can't overcome 200 characters`]
     },
     amount:{
         type:Number,

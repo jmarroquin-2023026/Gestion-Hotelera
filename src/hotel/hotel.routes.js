@@ -9,8 +9,8 @@ import { getCurrentDir } from "../../middlewares/get.current.dir.js";
 const api = Router()
 
 api.post('/add',[validateJwt,isAdmin,uploadHotelPhotos.array('photos',5),hotelValidator,deleteFileOnError,limiter], addHotel)
-api.get('/', [validateJwt,isAdmin,limiter], getHotel)
-api.get('/:id', [validateJwt, isAdmin,limiter], getHotelById)
+api.get('/', [validateJwt,limiter], getHotel)
+api.get('/:id', [validateJwt,limiter], getHotelById)
 api.put('/:id', [validateJwt, isAdmin,updatedHotelValidator,limiter], updateHotel)
 api.delete('/:id',[validateJwt,isAdmin,getCurrentDir,limiter], deleteHotel)
 api.post('/hotel-stats',[validateJwt, isNotClient,limiter],hotelStatsCreator)
