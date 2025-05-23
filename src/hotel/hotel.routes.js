@@ -8,10 +8,11 @@ import { deleteFileOnError } from "../../middlewares/delete.file.on.error.js";
 import { getCurrentDir } from "../../middlewares/get.current.dir.js";
 const api = Router()
 
-api.post('/add',[validateJwt,isAdmin,uploadHotelPhotos.array('photos',5),hotelValidator,deleteFileOnError,limiter], addHotel)
+
+api.post('/add',[validateJwt,isAdmin,uploadHotelPhotos.array('photos',5),hotelValidator,deleteFileOnError,limiter] , addHotel)
 api.get('/', [validateJwt,limiter], getHotel)
 api.get('/:id', [validateJwt,limiter], getHotelById)
-api.put('/:id', [validateJwt, isAdmin,updatedHotelValidator,limiter], updateHotel)
+api.put('/:id', [validateJwt,uploadHotelPhotos.array('photos',5), isAdmin,updatedHotelValidator,limiter], updateHotel)
 api.delete('/:id',[validateJwt,isAdmin,getCurrentDir,limiter], deleteHotel)
 api.post('/hotel-stats',[validateJwt, isNotClient,limiter],hotelStatsCreator)
 

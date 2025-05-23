@@ -75,31 +75,37 @@ export const getHotelById = async(req,res)=>{
     }
 }
 
-export const updateHotel = async(req,res)=>{
-    try{
-        let {id} = req.params
-        let data = req.body
-        let updateHotel = await Hotel.findByIdAndUpdate(id,data,{new:true})
-        if(!updateHotel){
-            return res.status(404).send(
-                {
-                    success: false,
-                    message: 'Hotel not found'
-                }
-            )
+export const updateHotel = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const data = req.body;
+        if (req.files && req.files.length > 0) {
+            const photoFilenames = req.files.map(file => file.filename);
+            data.photos = photoFilenames;
+
         }
-        return res.send(
-            {
-                success: true,
-                message: 'Hotel updated successfully',
-                updateHotel
-            }
-        )
-    }catch(e){
-        console.error(e)
-        return res.status(500).send({success:false, message:'General error',e})
+
+        const updatedHotel = await Hotel.findByIdAndUpdate(id, data, { new: true });
+
+        if (!updatedHotel) {
+            return res.status(404).send({
+                success: false,
+                message: 'Hotel not found'
+            });
+        }
+
+        return res.send({
+            success: true,
+            message: 'Hotel updated successfully',
+            updatedHotel
+        });
+
+    } catch (e) {
+        console.error(e);
+        return res.status(500).send({ success: false, message: 'General error', error: e.message });
     }
-}
+};
+
 
 export const deleteHotel = async(req,res)=>{
     try{
